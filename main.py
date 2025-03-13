@@ -103,14 +103,14 @@ class Order:
         self.order_date = datetime.datetime.now()
         self.products = []
 
-    def add_product(self, product):
+    def add_product(self, product) -> str:
         self.products.append(product)
         print(f"Product '{product.product_name}' added to order.")
 
-    def cancel_order(self):
+    def cancel_order(self) -> str:
         self.products.clear()
         print(f"Order {self.order_id} canceled successfully.")
 
-    def calculate_total(self):
+    def calculate_total(self) -> float:
         return sum(product.price for product in self.products)
 
